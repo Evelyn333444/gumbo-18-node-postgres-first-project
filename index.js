@@ -2,11 +2,11 @@ import { Pool } from "pg";
 import express from "express";
 
 const db = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'electronic',
-    password: 'testtest',
-    port: 5432,
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: parseInt(process.env.DB_PORT),
 });
 
 const app = express();
